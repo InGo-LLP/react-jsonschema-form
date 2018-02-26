@@ -138,6 +138,7 @@ class ObjectField extends Component {
       schema,
       formData,
       formContext,
+      errorSchema
     };
     return <Template {...templateProps} />;
   }
