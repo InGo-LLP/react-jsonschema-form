@@ -45,8 +45,8 @@ export default class Form extends Component {
     const { errors, errorSchema } = mustValidate
       ? this.validate(formData, schema)
       : {
-          errors: state.errors || [],
-          errorSchema: state.errorSchema || {},
+          errors: props.errors || state.errors || [],
+          errorSchema: props.errorSchema || state.errorSchema || {}
         };
     const idSchema = toIdSchema(
       retrievedSchema,
