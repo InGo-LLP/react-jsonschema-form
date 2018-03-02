@@ -310,13 +310,7 @@ export function isSelect(_schema, definitions = {}) {
 }
 
 export function isMultiSelect(schema, uiSchema, definitions = {}) {
-  if (uiSchema["ui:widget"] === "select") {
-    return true;
-  }
-  if (!schema.uniqueItems || !schema.items) {
-    return false;
-  }
-  return isSelect(schema.items, definitions);
+  return uiSchema["ui:widget"] === "select";
 }
 
 export function isFilesArray(schema, uiSchema, definitions = {}) {
